@@ -1,5 +1,5 @@
 {
-  "name": "rn-finger-print-android",
+  "name": "react-native-fingerprint",
   "version": "1.13.0",
   "description": "React native android finger print module",
   "main": "index.js",
