@@ -13,16 +13,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class FingerPrintPackage implements ReactPackage {
-    private Activity mCurrentActivity;
 
-    public FingerPrintPackage(Activity activity) {
-        mCurrentActivity = activity;
+    public FingerPrintPackage() {
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-            new FingerPrintModule(reactContext, mCurrentActivity)
+            new FingerPrintModule(reactContext)
         );
     }
 
