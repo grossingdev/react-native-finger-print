@@ -12,17 +12,17 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class OrientationPackage implements ReactPackage {
+public class FingerPrintPackage implements ReactPackage {
     private Activity mCurrentActivity;
 
-    public OrientationPackage(Activity activity) {
+    public FingerPrintPackage(Activity activity) {
         mCurrentActivity = activity;
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
-            new OrientationModule(reactContext, mCurrentActivity)
+            new FingerPrintModule(reactContext, mCurrentActivity)
         );
     }
 
