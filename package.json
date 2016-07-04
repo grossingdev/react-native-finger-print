@@ -1,0 +1,23 @@
+{
+  "name": "rn-finger-print-android",
+  "version": "1.13.0",
+  "description": "React native android finger print module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "fingerprint",
+    "android"
+  ],
+  "peerDependencies": {
+    "react-native": ">=0.5"
+  },
+  "author": "Nicoloas Hagenov (github.com/nickhagenov)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickhagenov/react-native-fingerprint.git"
+  }
+}
