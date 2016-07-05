@@ -6,26 +6,21 @@
 ## Configure Android Project
 ### In `android/setting.gradle`
 
-    ```
     ...
     include ':app'
     include ':react-native-fingerprint'
     project(':react-native-fingerprint').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fingerprint/android')
-    ```
 
 ### In `android/app/build.gradle`
 
-    ```
     ...
     dependencies {
         ...
         compile project(":react-native-fingerprint")
     }
-    ```
 
 ### Register module (in MainActivity.java)
 
-    ```
     import com.rn.fingerprint.FingerPrintPackage; // <--- import
 
     public class MainActivity extends ReactActivity {
@@ -40,7 +35,7 @@
       }
       ......
     }
-    ```
+    
 ## Example
 ```
 .....
