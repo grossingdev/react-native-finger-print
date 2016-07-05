@@ -1,7 +1,7 @@
 #FingerPrint react-native module for android.
 
 ## Install finger print module
-   run npm git://github.com/nickhagenov/react-native-fingerprint.git#e9fc8600ef20ffbe1fa7310f0c61c59148c16e63 --save
+   run npm git://github.com/nickhagenov/react-native-fingerprint.git#(latest commit uuid) --save
 
 ## Configure Android Project
 ### In `android/setting.gradle`
@@ -42,3 +42,40 @@
     }
     ```
 ## Example
+```
+.....
+import FingerPrint from 'react-native-fingerprint';
+.....
+
+class TestExample extends Component {
+  constructor(props, context) {
+    super(props, context);
+    ......
+    this.onFingerAuth = this.onFingerAuth.bind(this);
+    ......
+  }
+  componentDidMount() {
+    ......
+    FingerPrint.registerFingerPrintCallback(this.onFingerAuth);
+    FingerPrint.initializeFingerPrintAuth();
+    ......
+  }
+
+  componentWillUnmount() {
+    ......
+    FingerPrint.removeFingerPrintCallback();
+    ......
+  }
+
+  onFingerAuth(result) {
+    if (result.success) {
+        // add codes for success functionality
+    } else {
+      // add codes for failed functionality
+    }
+  }
+
+  .....
+}
+......
+```
