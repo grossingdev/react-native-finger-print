@@ -1,16 +1,12 @@
 #FingerPrint react-native module for android.
 
 ## Install finger print module
-    run npm command directly.
-    ```
+### Run npm command directly.
     npm install git://github.com/nickhagenov/react-native-fingerprint.git#(latest commit uuid) --save
-    ```
-    
-    add following line into package.json
-    ```
+
+### Add following line into package.json and run npm i (or npm install)
     "react-native-fingerprint": "git://github.com/nickhagenov/react-native-fingerprint.git#(latest commit uuid)"
-    and run npm i (or npm install)
-    ```
+
 ## Configure Android Project
 ### In `android/setting.gradle`
 
