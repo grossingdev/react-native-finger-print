@@ -34,35 +34,27 @@ public class FingerprintHandler extends FingerprintManager.AuthenticationCallbac
 
     @Override
     public void onAuthenticationError(int errMsgId, CharSequence errString) {
-
-        //creates unneccessary noise
-        Toast.makeText(appContext, "Authentication error\n" + errString, Toast.LENGTH_LONG).show();
-        callback("error: " + errString);
+        callback("Authentication error: " + errString, false);
     }
 
     @Override
     public void onAuthenticationHelp(int helpMsgId, CharSequence helpString) {
-        Toast.makeText(appContext, "Authentication help\n" + helpString, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onAuthenticationFailed() {
-        Toast.makeText(appContext, "Authentication failed", Toast.LENGTH_LONG).show();
-        callback("Authentication failed");
+        callback("Authentication failed. \nPlease try again", false);
     }
 
     @Override
     public void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult result) {
-
-        //UserAuthenticated.getInstance().setValue(true);
-        Toast.makeText(appContext,"Authentication succeeded",Toast.LENGTH_LONG).show();
-        callback("Authentication succeeded");
+        callback("", true);
     }
 
-    private void callback(String value) {
+    private void callback(String error, boolean success) {
         WritableMap params = Arguments.createMap();
-        params.putString("fingerprint", value);
-
+        params.putString("error", error);
+        params.putBoolean("success", success);
         appContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit("fingerprintAuth", params);

@@ -99,8 +99,7 @@ public class FingerPrintModule extends ReactContextBaseJavaModule {
             keyGenerator = KeyGenerator.getInstance(
                     KeyProperties.KEY_ALGORITHM_AES,
                     "AndroidKeyStore");
-        }catch(NoSuchAlgorithmException | NoSuchProviderException e )
-        {
+        }catch(NoSuchAlgorithmException | NoSuchProviderException e ) {
             throw new RuntimeException("Failed to get KeyGenerator instance",e);
         }
 

@@ -6,10 +6,10 @@ module.exports = {
   initializeFingerPrintAuth() {
     FingerPrint.initializeFingerPrintAuth();
   },
-  registerFingerPrintCallback() {
+  registerFingerPrintCallback(callback) {
     fingerprintAuthListener = DeviceEventEmitter.addListener('fingerprintAuth',
       (result) => {
-       console.info('result', result);
+        callback(result);
       });
   },
   removeFingerPrintCallback() {
@@ -17,5 +17,5 @@ module.exports = {
       fingerprintAuthListener.remove();
       fingerprintAuthListener = null;
     }
-  }
+  },
 }
